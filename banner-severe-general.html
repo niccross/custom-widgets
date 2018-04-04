@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Severe Weather</title>
+	<!-- Include Simpla, Netlify auth adapter, and cross-browser polyfill-->
+	<script src="https://unpkg.com/simpla@^3.0.0"></script>
+	<script src="https://unpkg.com/simpla@^3.0.0/adapters/netlify.js"></script>
+	<script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js" async></script>
+
+	<!-- Init Simpla -->
+	<script>
+		Simpla.init({
+
+			// The Github repo you want Simpla to use
+			repo: 'niccross/custom-widgets',
+
+			// Netlify auth adapter, initialize with your Netlify site name
+			auth: new SimplaNetlify({ site: 'woodtv-widgets' }),
+
+			// Public content source (optional)
+			// Defaults to fetching directly from Github
+			source: 'https://woodtv-widgets.netlify.com/'
+
+		});
+
+		Window.Simpla = Simpla;
+	</script>
+
+	<!-- Import Simpla elements -->
+	<link rel="import" href="/bower_components/simpla-text/simpla-text.html">
+	<link rel="import" href="/bower_components/simpla-img/simpla-img.html">
+	<link rel="import" href="/bower_components/simpla-admin/simpla-admin.html" async>
+</head>
+<body>
+<!-- Block of editable richtext -->
+<simpla-text path="/text"></simpla-text>
+
+<!-- An editable image -->
+<img is="simpla-img" path="/section/img">
+</body>
+</html>
