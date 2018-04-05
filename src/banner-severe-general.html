@@ -1,50 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Severe Weather</title>
 
-	<!-- Include cross-browser polyfill-->
-	<script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js" async></script>
+{% extends '_base.html' %}
 
-	<!-- Init Simpla -->
-	<script>
-		// Import Simpla and OAuth adapter
-		import Simpla from 'simpla';
-		import SimplaNetlify from 'simpla/adapters/netlify';
-
-		const SIMPLA_CONFIG = {
-
-			// The Github repo you want Simpla to use
-			repo: 'niccross/custom-widgets',
-			branch: 'master',
-
-			// Netlify auth adapter, initialize with your Netlify site name
-			auth: new SimplaNetlify({ site: 'woodtv-widgets' }),
-
-			// Public content source (optional)
-			// Defaults to fetching directly from Github
-			source: window.location.origin // https://woodtv-widgets.netlify.com
-
-		};
-
-		// Config Polymer
-		window.Polymer = {
-			dom: 'shadow',
-			lazyRegister: true,
-			useNativeCSSProperties: true
-		};
-
-		// Init Simpla
-		Simpla.init( SIMPLA_CONFIG );
-		window.Simpla = Simpla;
-	</script>
-
-	<!-- Polymer Component -->
-	<link rel="import" href="/bower_components/polymer/polymer.html">
-
+{% block imports %}
 	<!-- Import Simpla elements -->
 	<link rel="import" href="/bower_components/simpla-collection/simpla-collection.html">
 	<link rel="import" href="/bower_components/simpla-paths/simpla-paths.html">
@@ -52,21 +9,23 @@
 	<link rel="import" href="/bower_components/simpla-link/simpla-link.html">
 	<link rel="import" href="/bower_components/simpla-img/simpla-img.html">
 	<link rel="import" href="/bower_components/simpla-admin/simpla-admin.html" async>
+{% endblock %}
 
-	<!-- polyfill for compatibility -->
-	<script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js" async></script>
+{% block styles %}
+{% endblock %}
 
-	<!-- Styles -->
-	<link rel="import" href="/bower_components/simpla-styles/simpla-styles.html" async>
-</head>
-<body>
-<!-- Block of editable richtext -->
-<simpla-text path="/test/text">Default Text?</simpla-text>
-<simpla-collection path="/test" as="image">
-	<template>
-		<!-- An editable image -->
-		<img is="simpla-img" path="/test/[image]/img">
-	</template>
-</simpla-collection>
-</body>
-</html>
+{% block view %}
+
+<!-- Block of editable richtext wrapped in an editable link -->
+<div sid="severe">
+	<div sid="textlink"><simpla-link sid="href"><simpla-text sid="label">Default Text?</simpla-text></simpla-link></div>
+	<!-- Animated radar images -->
+	<simpla-collection sid="radar" as="image">
+		<template>
+			<!-- An editable image -->
+			<img is="simpla-img" path="/radar/[image]/img">
+		</template>
+	</simpla-collection>
+</div>
+
+{% endblock %}

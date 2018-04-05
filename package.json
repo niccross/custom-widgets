@@ -53,7 +53,7 @@
     "url": "git+https://github.com/niccross/custom-widgets.git"
   },
   "author": "Nic Cross <nic.cross@woodtv.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/niccross/custom-widgets/issues"
   },

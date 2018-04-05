@@ -1,0 +1,45 @@
+<!-- Include cross-browser polyfill-->
+<script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js" async></script>
+
+<!-- Init Simpla -->
+<script>
+	// Import Simpla and OAuth adapter
+	import Simpla from 'simpla';
+	import SimplaNetlify from 'simpla/adapters/netlify';
+
+	const SIMPLA_CONFIG = {
+
+		// The Github repo you want Simpla to use
+		repo: 'niccross/custom-widgets',
+		branch: 'master',
+
+		// Netlify auth adapter, initialize with your Netlify site name
+		auth: new SimplaNetlify({ site: 'woodtv-widgets' }),
+
+		// Public content source (optional)
+		// Defaults to fetching directly from Github
+		source: window.location.origin // https://woodtv-widgets.netlify.com
+
+	};
+
+	// Config Polymer
+	window.Polymer = {
+		dom: 'shadow',
+		lazyRegister: true,
+		useNativeCSSProperties: true
+	};
+
+	// Init Simpla
+	Simpla.init( SIMPLA_CONFIG );
+	window.Simpla = Simpla;
+</script>
+
+<!-- Components -->
+<link rel="import" href="/bower_components/polymer/polymer.html">
+{% block imports %}{% endblock %}
+
+<!-- Styles -->
+<link rel="import" href="/bower_components/simpla-styles/simpla-styles.html" async>
+{% block styles %}{% endblock %}
+
+{% block view %}{% endblock %}

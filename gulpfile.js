@@ -34,7 +34,7 @@ const responsiveType = require( 'postcss-responsive-type' );
 const customMedia = require( 'postcss-custom-media' );
 
 // Other
-//const imagemin = require( 'gulp-imagemin' );
+const imagemin = require( 'gulp-imagemin' );
 
 const ENV     = process.env.NODE_ENV,
       BUILDS  = {
@@ -50,18 +50,18 @@ const ENV     = process.env.NODE_ENV,
 		      watch : 'src/*.html',
 		      dest  : 'dist'
 	      },
-	      // components : {
-		//       task  : 'build:components',
-		//       src   : 'src/components/**/*.html',
-		//       watch : 'src/components/**/*',
-		//       dest  : 'dist/components'
-	      // },
-	      // assets     : {
-		//       task  : 'build:assets',
-		//       src   : 'src/assets/**/*',
-		//       watch : 'src/assets/**/*',
-		//       dest  : 'dist/assets'
-	      // }
+	      components : {
+		      task  : 'build:components',
+		      src   : 'src/components/**/*.html',
+		      watch : 'src/components/**/*',
+		      dest  : 'dist/components'
+	      },
+	      assets     : {
+		      task  : 'build:assets',
+		      src   : 'src/assets/**/*',
+		      watch : 'src/assets/**/*',
+		      dest  : 'dist/assets'
+	      }
       },
       OPTIONS = {
 	      nunjucks    : {
