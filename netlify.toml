@@ -1,0 +1,29 @@
+# Global settings applied to the whole site.
+[Settings]
+  ID = "Custom_Widgets"
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.
+[build]
+
+# This is the directory to change to before starting a build.
+#  base    = "project/"
+  # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
+
+# This is the directory that you are publishing from (relative to root of your repo)
+#  publish = "project/build-output/"
+
+# This will be your default build command
+  command = "npm run build"
+
+# This is where we will look for your lambda functions
+#  functions = "project/functions/"
+
+# Production context: All deploys to the main repository branch will inherit these settings.
+#[context.production]
+#  command = "make production"
+
+# A redirects rule
+# NOTE: Each combination of query params will need to be defined in a separate [[redirects]] block. More here: https://www.netlify.com/docs/redirects/#query-params
+#[[redirects]]
+#  from = "/*"
+#  to = "/blog/:splat"

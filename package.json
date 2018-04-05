@@ -8,13 +8,14 @@
   },
   "devDependencies": {},
   "scripts": {
+    "build": "echo \"[[npm build]]\" && exit 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/niccross/custom-widgets.git"
   },
-  "author": "",
+  "author": "Nic Cross <nic.cross@woodtv.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/niccross/custom-widgets/issues"
