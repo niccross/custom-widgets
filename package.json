@@ -4,6 +4,7 @@
   "description": "Custom Widgets",
   "main": "",
   "dependencies": {
+    "prismjs": "^1.5.1",
     "simpla": "^3.0.1"
   },
   "browserslist": [
