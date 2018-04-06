@@ -12,18 +12,21 @@
 {% endblock %}
 
 {% block styles %}
+<style>
+	#widget__wrap__outer { margin: 40px; }
+</style>
 {% endblock %}
 
 {% block view %}
 
 <!-- Block of editable richtext wrapped in an editable link -->
-<div sid="severe">
-	<div sid="textlink"><simpla-link path="href"><simpla-text path="label">Default Text?</simpla-text></simpla-link></div>
+<div id="widget__wrap__outer" sid="severe">
+	<simpla-text sid="title">Default Text?</simpla-text>
 	<!-- Animated radar images -->
 	<simpla-collection sid="radar" as="image">
 		<template>
 			<!-- An editable image -->
-			<img is="simpla-img" path="/radar/[image]/img">
+			<img is="simpla-img" sid="[image]/img">
 		</template>
 	</simpla-collection>
 </div>
