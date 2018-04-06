@@ -3,6 +3,19 @@
   "version": "0.1.0",
   "description": "Custom Widgets",
   "main": "",
+  "author": "Nic Cross <nic.cross@woodtv.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niccross/custom-widgets/issues"
+  },
+  "homepage": "https://github.com/niccross/custom-widgets#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niccross/custom-widgets.git"
+  },
+  "scripts": {
+    "build": "gulp build"
+  },
   "dependencies": {
     "prismjs": "^1.5.1",
     "simpla": "^3.0.1"
@@ -26,7 +39,6 @@
     "gulp-gray-matter": "^3.0.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.4.0",
     "gulp-inline-source": "^3.1.0",
     "gulp-notify": "^3.0.0",
     "gulp-nunjucks-render": "^2.2.1",
@@ -44,18 +56,5 @@
     "rollup-plugin-commonjs": "^8.2.4",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-node-resolve": "^3.0.0"
-  },
-  "scripts": {
-    "build": "NODE_ENV=production gulp build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/niccross/custom-widgets.git"
-  },
-  "author": "Nic Cross <nic.cross@woodtv.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/niccross/custom-widgets/issues"
-  },
-  "homepage": "https://github.com/niccross/custom-widgets#readme"
+  }
 }
