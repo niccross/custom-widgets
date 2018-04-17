@@ -1,9 +1,9 @@
 {
   "type": "Text",
   "data": {
-    "text": "<a href=\"#\">Hyperlink 1</a>"
+    "text": "<a href=\"#\">link one</a>"
   },
   "path": "/nxs/widget-banner/general/bottom/link1",
-  "createdAt": "2018-04-06T18:26:53.997Z",
-  "updatedAt": "2018-04-06T18:27:30.438Z"
+  "createdAt": "2018-04-17T13:20:25.138Z",
+  "updatedAt": "2018-04-17T14:19:05.401Z"
 }
